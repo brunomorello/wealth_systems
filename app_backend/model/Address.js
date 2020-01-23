@@ -30,4 +30,4 @@ class Address {
 
 }
 
-module.exports = new Address;
+module.exports = Address;

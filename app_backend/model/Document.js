@@ -15,4 +15,4 @@ class Document {
 
 }
 
-module.exports = new Document;
+module.exports = Document;

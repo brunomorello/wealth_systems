@@ -22,6 +22,7 @@ class Farmer {
     get document() {
         return this._document;
     }
+    
 }
 
-module.exports = new Farmer;
+module.exports = Farmer;
