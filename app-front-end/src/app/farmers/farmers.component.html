@@ -1,0 +1,9 @@
+<div>
+    <input 
+        [(ngModel)]="farmer.searchable" 
+        (input)="searchFarmer(farmer.searchable)"
+        placeholder="Name or Doc#">
+    <label>{{farmer.searchable}}</label>
+</div>
+
+<app-farmer-details [farmer]="farmer"></app-farmer-details>
