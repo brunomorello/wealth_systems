@@ -1,31 +1,31 @@
 class Address {
 
     constructor(id, street, state, address, country) {
-        this._id = id;
-        this._street = street;
-        this._state = state;
-        this._address = address;
-        this._country = country;
+        this.id = id;
+        this.street = street;
+        this.state = state;
+        this.address = address;
+        this.country = country;
     }
 
     get id() {
-        return this._id;
+        return this.id;
     }
 
     get street() {
-        return this._street;
+        return this.street;
     }
 
     get state() {
-        return this._state;
+        return this.state;
     }
 
     get address() {
-        return this._address;
+        return this.address;
     }
 
     get country() {
-        return this._country;
+        return this.country;
     }
 
 }

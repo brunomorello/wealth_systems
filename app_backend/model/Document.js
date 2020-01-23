@@ -1,16 +1,16 @@
 class Document {
 
     constructor(number, type) {
-        this._number = number;
-        this._type = type;
+        this.number = number;
+        this.type = type;
     }
 
     get number() {
-        return this._number;
+        return this.number;
     }
 
     get type() {
-        return this._type;
+        return this.type;
     }
 
 }

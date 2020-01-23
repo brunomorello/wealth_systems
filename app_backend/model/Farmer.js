@@ -1,26 +1,26 @@
 class Farmer {
 
     constructor(id, name, address, document) {
-        this._id = id;
-        this._name = name;
-        this._address = address;
-        this._document = document;
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.document = document;
     }
 
     get id() {
-        return this._id;
+        return this.id;
     }
 
     get name() {
-        return this._name;
+        return this.name;
     }
 
     get address() {
-        return this._address;
+        return this.address;
     }
 
     get document() {
-        return this._document;
+        return this.document;
     }
     
 }
