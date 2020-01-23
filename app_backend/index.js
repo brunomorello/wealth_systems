@@ -28,7 +28,6 @@ app.get('/farmer/:searchable', (req, res) => {
             farmersList: []
         };
             
-
         results.rows.forEach(row => {
 
             var document = new Document(row.document_number, row.document_type);
