@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 
 import { Farmer } from "../model/Farmer";
-import { Document } from "../model/Document";
-import { Address } from "../model/Address";
 
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Document } from '../model/Document';
+import { Address } from '../model/Address';
 
 @Injectable({
   providedIn: 'root'
