@@ -1,5 +1,11 @@
 class Address {
 
+    id = '';
+    street = '';
+    state = '';
+    address = '';
+    country = '';
+
     constructor(id, street, state, address, country) {
         this.id = id;
         this.street = street;

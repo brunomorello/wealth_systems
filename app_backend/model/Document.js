@@ -1,5 +1,8 @@
 class Document {
 
+    number = '';
+    type = '';
+
     constructor(number, type) {
         this.number = number;
         this.type = type;

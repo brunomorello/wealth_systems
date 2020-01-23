@@ -1,5 +1,10 @@
 class Farmer {
 
+    id = '';
+    name = '';
+    address = '';
+    document = '';
+
     constructor(id, name, address, document) {
         this.id = id;
         this.name = name;
