@@ -24,9 +24,7 @@ app.get('/farmer/:searchable', (req, res) => {
         
         if(error) throw error;
 
-        let farmers = {
-            farmersList: []
-        };
+        let farmersList = [];
             
         results.rows.forEach(row => {
 
@@ -34,11 +32,11 @@ app.get('/farmer/:searchable', (req, res) => {
             var address = new Address(row.address_id, row.street, row.state, row.address, row.country);
             var farmer = new Farmer(row.farmer_id, row.name, address, document);
 
-            farmers.farmersList.push(farmer);
+            farmersList.push(farmer);
 
         });
 
-        res.json(farmers);
+        res.json(farmersList);
     })
 });
 
