@@ -1,5 +1,12 @@
-.custom-form {
-    min-width: 100px;
-    max-width: 200px;
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 350px;
+    margin: 5px;
+    background-color: aquamarine;
+}
+
+.container > * {
     width: 100%;
 }

@@ -1,7 +1,12 @@
-<div *ngIf="farmer">
-    <h2>Farmer details:</h2>
-    
-    <p>{{farmer.address.street}} {{farmer.address.state}} {{farmer.address.address}} {{farmer.address.country}}</p>
-    <p>{{farmer.document.number}}</p>
-    <p>{{farmer.name}}</p>
+<div class="container" *ngIf="farmer.id">
+    <mat-card>
+        <mat-card-title>
+            Farmer Details:
+        </mat-card-title>
+        <mat-card-content>
+            <p>{{farmer.address.street}} {{farmer.address.state}} {{farmer.address.address}} {{farmer.address.country}}</p>
+            <p>{{farmer.document.number}}</p>
+            <p>{{farmer.name}}</p>
+        </mat-card-content>
+    </mat-card>
 </div>

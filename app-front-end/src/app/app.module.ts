@@ -11,6 +11,8 @@ import { FarmerDetailsComponent } from './farmer-details/farmer-details.componen
 
 import { HttpClientModule } from "@angular/common/http";
 
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule } from "@angular/material";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,11 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

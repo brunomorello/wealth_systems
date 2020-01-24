@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Address } from "../model/Address";
-import { Document } from "../model/Document";
 import { Farmer } from "../model/Farmer";
-
 import { FarmerService } from "../services/farmer.service";
 
 @Component({
@@ -30,6 +27,11 @@ export class FarmersComponent implements OnInit {
   }
 
   searchFarmer(searchable) {
+
+    if(!searchable) {
+      alert('please type a name or doc#');
+      return;
+    }
     
     this.farmerService.getFarmer(searchable)
       .subscribe(farmers => {

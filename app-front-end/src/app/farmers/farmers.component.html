@@ -1,8 +1,13 @@
-<div>
-    <input 
-        [(ngModel)]="farmer.searchable" 
-        placeholder="Name or Doc#">
-    <input type="button" (click)="searchFarmer(farmer.searchable)" value="Search">
+<div class="container">
+    <mat-card>
+        <mat-form-field appearance="standard">
+            <input matInput
+                [(ngModel)]="farmer.searchable" 
+                placeholder="Name or Doc#">
+            <mat-error *ngIf="searchable.invalid">Please, type a name or doc#</mat-error>
+        </mat-form-field>
+        <button mat-button (click)="searchFarmer(farmer.searchable)">Search</button>
+    </mat-card>
 </div>
 
 <app-farmer-details [farmer]="farmer"></app-farmer-details>

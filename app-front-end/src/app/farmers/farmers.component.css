@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 30px;
+}
+
+.container > * {
+    width: 100%;
+}
+
+.mat-button {
+    margin-left: 20px;
+}
