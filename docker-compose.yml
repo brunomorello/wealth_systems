@@ -30,6 +30,16 @@ services:
     networks: 
       - app-network
 
+  angular-service:
+    build: ./app-front-end
+    volumes: 
+      - ./app-front-end:/home/node/app
+    ports:
+      - "4200:4200"
+    command: ng serve
+    depends_on: 
+      - nodejs
+
 networks: 
   app-network:
       driver: bridge
