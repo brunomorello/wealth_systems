@@ -13,25 +13,15 @@ import { FarmerService } from "../services/farmer.service";
 })
 export class FarmersComponent implements OnInit {
 
-  document: Document = {
-    documentNumber: '',
-    documentType: ''
-  };
-
-  address: Address = {
-    address: '',
-    country: '',
-    state: '',
-    street: ''
-  };
-
+  // initialize farmer
   farmer: Farmer = {
-    id: "",
-    name: "",
-    document: this.document,
-    address: this.address
+    id: '',
+    name: '',
+    document: { documentNumber: '', documentType: ''},
+    address: { address: '', country: '', state: '', street: ''}
   };
 
+  // query filter
   searchable = '';
 
   constructor(private farmerService: FarmerService) { }
@@ -42,7 +32,10 @@ export class FarmersComponent implements OnInit {
   searchFarmer(searchable) {
     
     this.farmerService.getFarmer(searchable)
-      .subscribe(farmer => this.farmer = farmer[0]);
+      .subscribe(farmers => {
+        console.log(farmers);
+        this.farmer = farmers[0];
+      });
   
   }
 
