@@ -4,6 +4,11 @@ const pool = require('./config/sql/postgres.js');
 const Farmer = require('./model/Farmer');
 const Address = require('./model/Address');
 const Document = require('./model/Document');
+const sgMail = require('@sendgrid/mail');
+
+
+// tests
+const nodemailer = require('nodemailer');
 
 app.get('/farmer/:searchable', (req, res) => {
 
@@ -39,5 +44,39 @@ app.get('/farmer/:searchable', (req, res) => {
         res.json(farmersList);
     })
 });
+
+app.post('/sendmail', (req, res) => {
+
+    sgMail.setApiKey('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');
+
+    const msg = {
+        to: 'brunomorello7@gmail.com',
+        from: 'brunomorello7@gmail.com',
+        subject: 'Testing BMO NodeJS',
+        text: 'and easy to do anywhere, even with Node.js'
+      };
+    sgMail.send(msg)
+        .then(resp => res.json(resp))
+        .catch(error => res.json(error));
+
+});
+
+async function sendMail() {
+
+    let smtp = nodemailer.createTransport({
+        host: 'smtp-relay.gmail.com',
+        port: 587,
+        secure: false,
+        auth: {
+            user: '',
+            pass: ''
+        }
+    });
+
+    let bodyInfo = {
+
+    }
+
+}
 
 app.listen(port, () => console.log(`Server running on port 3000`));
