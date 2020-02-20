@@ -61,22 +61,36 @@ app.post('/sendmail', (req, res) => {
 
 });
 
-async function sendMail() {
+app.post('/nodemailer', (req, res) => {
 
-    let smtp = nodemailer.createTransport({
-        host: 'smtp-relay.gmail.com',
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
         port: 587,
-        secure: false,
         auth: {
-            user: '',
-            pass: ''
+            user: 'bmo.fullstack@gmail.com',
+            pass: 'Dqm72vnc'
         }
     });
 
-    let bodyInfo = {
+    let info = transporter.sendMail({
+        from: 'bmo.fullstack@gmail.com',
+        to: 'bmo.fullstack@gmail.com',
+        subject: 'testing nodemailer',
+        text: req.body.message
+    });
 
+    console.log(info);
+
+    if (info) {
+        res.status(200).send({
+            msg: 'Email Sent'
+        });
+    } else {
+        res.status(500).send({
+            msg: 'Error to Send Email'
+        });
     }
 
-}
+});
 
 app.listen(port, () => console.log(`Server running on port 3000`));
