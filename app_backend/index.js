@@ -79,17 +79,25 @@ app.post('/nodemailer', (req, res) => {
         text: req.body.message
     });
 
-    console.log(info);
+    info
+        .then(resp => {
+            res.status(200).send(resp);
+        })
+        .catch(error => {
+            res.status(500).send(error);
+        })
 
-    if (info) {
-        res.status(200).send({
-            msg: 'Email Sent'
-        });
-    } else {
-        res.status(500).send({
-            msg: 'Error to Send Email'
-        });
-    }
+    // console.log(info);
+
+    // if (info) {
+    //     res.status(200).send({
+    //         msg: 'Email Sent'
+    //     });
+    // } else {
+    //     res.status(500).send({
+    //         msg: 'Error to Send Email'
+    //     });
+    // }
 
 });
 
